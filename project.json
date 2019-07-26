@@ -862,18 +862,6 @@
         {
           "type": "delete_own",
           "roles": []
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ],
       "submissionAccess": [
@@ -916,18 +904,6 @@
           "roles": [
             "authenticated"
           ]
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ]
     },
@@ -1080,18 +1056,6 @@
         {
           "type": "delete_own",
           "roles": []
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ],
       "submissionAccess": [
@@ -1134,18 +1098,6 @@
           "roles": [
             "authenticated"
           ]
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ]
     }
