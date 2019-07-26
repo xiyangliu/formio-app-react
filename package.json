@@ -7,11 +7,11 @@
     "clean": "rm -rf build && rm -rf dist",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:dist": "react-scripts build && mv build dist && cp src/config.template.js dist",
+    "build:dist": "react-scripts build && mv build dist && cp src/config.template.js dist && cp src/project.json dist && cp package.json dist",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged",
-    "deploy": "npm run clean && npm run build:dist && gh-pages -b releases -d ."
+    "deploy": "npm run clean && npm run build:dist && gh-pages -d dist -b releases"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
