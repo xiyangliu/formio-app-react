@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Form } from 'react-formio';
-import { push } from 'connected-react-router'
-import {AppConfig, AuthConfig} from '../../config';
-import { setUser } from 'react-formio';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Form } from "react-formio";
+import { push } from "connected-react-router";
+import { AppConfig, AuthConfig } from "../../config.template";
+import { setUser } from "react-formio";
 
-const Login = class  extends Component {
+const Login = class extends Component {
   render() {
-    return (
-      <Form {...this.props} />
-    );
+    return <Form {...this.props} />;
   }
-}
+};
 
 const mapStateToProps = () => {
   return {
-    src: AppConfig.projectUrl + '/' + AuthConfig.login.form
+    src: AppConfig.projectUrl + "/" + AuthConfig.login.form
   };
-}
+};
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    onSubmitDone: (submission) => {
+    onSubmitDone: submission => {
       dispatch(push(AuthConfig.authState));
       dispatch(setUser(submission));
     }
   };
-}
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Login)
+)(Login);
