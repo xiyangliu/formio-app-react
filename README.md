@@ -11,7 +11,7 @@ Agile Formio App
 npm install
 npm start
 ```
-如果react-formio或formiojs安装报错，请参考[github ssh setup](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
+如果react-formio或formiojs安装报错，请参考[使用 SSH 连接到 GitHub](https://help.github.com/cn/articles/connecting-to-github-with-ssh)
 
 如何连接本地formio.js和react-formio项目（以下本地改动不要checkin!)
 -------------------
