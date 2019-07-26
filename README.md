@@ -16,28 +16,28 @@ npm start
 如何连接本地formio.js和react-formio项目（以下本地改动不要checkin!)
 -------------------
 下载repo https://github.com/xiyangliu/formio.js 和 https://github.com/xiyangliu/react-formio。
-- 至formio.js目录
+至formio.js目录
 ```
 npm install
 npm run build
 cd lib
 npm link formiojs
 ```
-- 至react-formio目录，将package.json里dependencies的formiojs改为本地lib地址，如
+至react-formio目录，将package.json里dependencies的formiojs改为本地lib地址，如
 ```
 "formiojs": "file:../formiojs/lib",
 ```
-- 运行
+运行
 ```
 npm link formiojs
 npm install
 npm run build
 ```
-- 至formio-app-react目录，将package.json里dependencies的react-formio改为本地地址，如
+至formio-app-react目录，将package.json里dependencies的react-formio改为本地地址，如
 ```
 "react-formio": "file:../react-formio",
 ```
-- 运行
+运行
 ```
 npm link react-formio
 npm install
@@ -47,7 +47,7 @@ npm start
 如何验证本地formio.js和react-formio改动
 -------------------
 连接本地formio.js和react-formio成功后，react-formio的改动可以在app启动下动态加载：
-- 进入react-formio目录
+进入react-formio目录
 ```
 npm run build
 ```
@@ -60,7 +60,7 @@ npm run build
 ```
 - 启动app
 
-如何发布formio.js和react-formio改动
+如何发布改动
 -------------------
 - formio.js
     - 提交改动至chinese-translation或其他个人分支
@@ -76,29 +76,32 @@ npm run build
     npm run build
     npm run deploy
     ```
+- formio-app-react
+    - 提交改动至master或其他个人分支
+    - 以下命令将自动把最新改动发布至releases分支，不要手动修改此分支
+    ```
+    npm run deploy
+    ```
 
 如何取消连接本地formio.js和react-formio项目
 -------------------
 如果需要验证改动已正确地发布到github分支，需要取消本地连接
 
-- 至formio.js目录
+至formio.js目录，运行
 ```
 cd lib
 npm unlink
 ```
-- 至react-formio目录，将package.json里dependencies的formiojs改为初始值
-- 运行
+至react-formio目录，将package.json里dependencies的formiojs改为初始值，运行
 ```
+npm unlink
 rm -rf node_modules/formiojs
-npm unlink formiojs
 npm i formiojs
-npm build
+npm run build
 ```
-- 至formio-app-react目录，将package.json里dependencies的react-formio改为初始值
-- 运行
+至formio-app-react目录，将package.json里dependencies的react-formio改为初始值，运行
 ```
 rm -rf node_modules/react-formio
-npm unlink react-formio
 npm i react-formio
 npm start
 ```
