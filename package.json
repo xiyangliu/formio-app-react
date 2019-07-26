@@ -4,13 +4,16 @@
   "private": true,
   "homepage": ".",
   "scripts": {
+    "clean": "rm -rf build && rm -rf dist",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:dist": "npm run clean && react-scripts build && mv build dist && cp src/config.template.js dist",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "react-scripts": "^2.1.5"
   },
   "dependencies": {

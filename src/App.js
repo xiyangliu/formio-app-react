@@ -6,7 +6,7 @@ import Home from "./views/Home";
 import Form from "./views/Form";
 import Event from "./views/Event";
 import Auth from "./views/Auth/Auth";
-import { AppConfig } from "./config.template";
+import { AppConfig } from "./config";
 
 const App = () => (
   <div>
