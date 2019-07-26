@@ -1,68 +1,113 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Agile Formio App
+===============================
+此前端app需要连接formio服务器，请参考 https://github.com/xiyangliu/formio/tree/translation 关于如何启动本地formio服务器
 
-In the project directory, you can run:
+开发环境配置
+------------------
+安装Node.js并下载repo
+```
+npm install
+npm start
+```
+如果react-formio或formiojs安装报错，请参考[github ssh setup](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
 
-### `npm start`
+如何连接本地formio.js和react-formio项目（以下本地改动不要checkin!)
+-------------------
+下载repo https://github.com/xiyangliu/formio.js 和 https://github.com/xiyangliu/react-formio。
+- 至formio.js目录
+```
+npm install
+npm run build
+cd lib
+npm link formiojs
+```
+- 至react-formio目录，将package.json里dependencies的formiojs改为本地lib地址，如
+```
+"formiojs": "file:../formiojs/lib",
+```
+- 运行
+```
+npm link formiojs
+npm install
+npm run build
+```
+- 至formio-app-react目录，将package.json里dependencies的react-formio改为本地地址，如
+```
+"react-formio": "file:../react-formio",
+```
+- 运行
+```
+npm link react-formio
+npm install
+npm start
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+如何验证本地formio.js和react-formio改动
+-------------------
+连接本地formio.js和react-formio成功后，react-formio的改动可以在app启动下动态加载：
+- 进入react-formio目录
+```
+npm run build
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+formiojs编译时间较长，需要重启app
+- 停止app
+- 进入formio.js目录
+```
+npm run build
+```
+- 启动app
 
-### `npm test`
+如何发布formio.js和react-formio改动
+-------------------
+- formio.js
+    - 提交改动至chinese-translation或其他个人分支
+    - 以下命令将自动把最新改动发布至chinese-translation-releases分支，不要手动修改此分支
+    ```
+    npm run build
+    npm run deploy
+    ```
+- reac-formio
+    - 提交改动至chinese-translation或其他个人分支
+    - 以下命令将自动把最新改动发布至chinese-translation-releases分支，不要手动修改此分支
+    ```
+    npm run build
+    npm run deploy
+    ```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+如何取消连接本地formio.js和react-formio项目
+-------------------
+如果需要验证改动已正确地发布到github分支，需要取消本地连接
 
-### `npm run build`
+- 至formio.js目录
+```
+cd lib
+npm unlink
+```
+- 至react-formio目录，将package.json里dependencies的formiojs改为初始值
+- 运行
+```
+rm -rf node_modules/formiojs
+npm unlink formiojs
+npm i formiojs
+npm build
+```
+- 至formio-app-react目录，将package.json里dependencies的react-formio改为初始值
+- 运行
+```
+rm -rf node_modules/react-formio
+npm unlink react-formio
+npm i react-formio
+npm start
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+汉化
+-------------------
+react-formio已基本汉化完成，如有遗漏，可按以上本地连接，发布步骤进行汉化
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+formio.js的汉化主要集中在以下三个地方
+- 控件：https://github.com/xiyangliu/formio.js/tree/chinese-translation/src/components 主要修改xxx.js里的label
+- 控件编辑页面：https://github.com/xiyangliu/formio.js/tree/chinese-translation/src/components/_classes 包含编辑页面的所有tab和各种widget的label, tooltip, placeholder
+- 其他html模版：目前只需要汉化bootstrap4模版，已尽量汉化完成，如有遗漏，可至https://github.com/xiyangliu/formio.js/tree/chinese-translation/src/templates/bootstrap 修改
