@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "react-scripts": "^2.1.5"
+    "react-scripts": "^3.0.1"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -27,7 +27,7 @@
     "node-sass": "^4.12.0",
     "react": "16.8.2",
     "react-dom": "16.8.2",
-    "react-formio": "git+ssh://git@github.com/xiyangliu/react-formio.git#chinese-translation-releases",
+    "react-formio": "git+ssh://git@github.com/opensourceclub/react-formio.git#chinese-translation-releases",
     "react-redux": "^5.1.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",

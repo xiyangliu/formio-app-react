@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Agile Formio App
 ===============================
-此前端app需要连接formio服务器，请参考 https://github.com/xiyangliu/formio/tree/translation 关于如何启动本地formio服务器
+此前端app需要连接formio服务器，请参考 https://github.com/opensourceclub/formio/tree/translation 关于如何启动本地formio服务器
 
 开发环境配置
 ------------------
@@ -15,7 +15,7 @@ npm start
 
 如何连接本地formio.js和react-formio项目（以下本地改动不要checkin!)
 -------------------
-下载repo https://github.com/xiyangliu/formio.js 和 https://github.com/xiyangliu/react-formio。
+下载repo https://github.com/opensourceclub/formio.js 和 https://github.com/opensourceclub/react-formio。
 至formio.js目录
 ```
 npm install
@@ -111,6 +111,6 @@ npm start
 react-formio已基本汉化完成，如有遗漏，可按以上本地连接，发布步骤进行汉化
 
 formio.js的汉化主要集中在以下三个地方
-- 控件：https://github.com/xiyangliu/formio.js/tree/chinese-translation/src/components 主要修改xxx.js里的label
-- 控件编辑页面：https://github.com/xiyangliu/formio.js/tree/chinese-translation/src/components/_classes 包含编辑页面的所有tab和各种widget的label, tooltip, placeholder
-- 其他html模版：目前只需要汉化bootstrap4模版，已尽量汉化完成，如有遗漏，可至https://github.com/xiyangliu/formio.js/tree/chinese-translation/src/templates/bootstrap 修改
+- 控件：https://github.com/opensourceclub/formio.js/tree/chinese-translation/src/components 主要修改xxx.js里的label
+- 控件编辑页面：https://github.com/opensourceclub/formio.js/tree/chinese-translation/src/components/_classes 包含编辑页面的所有tab和各种widget的label, tooltip, placeholder
+- 其他html模版：目前只需要汉化bootstrap4模版，已尽量汉化完成，如有遗漏，可至https://github.com/opensourceclub/formio.js/tree/chinese-translation/src/templates/bootstrap 修改
