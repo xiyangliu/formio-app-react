@@ -7,7 +7,7 @@
     "clean": "rm -rf build && rm -rf dist",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:dist": "react-scripts build && mv build dist && cp src/config.template.js dist && cp src/project.json dist && cp package.json dist",
+    "build:dist": "react-scripts build && mv build dist && cp src/config.js dist/config.template.js && cp src/project.json dist && cp package.json dist",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged",

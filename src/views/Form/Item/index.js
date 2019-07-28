@@ -38,22 +38,22 @@ const Item = class extends Component{
           </li>
           <li className="nav-item">
             <Link className="nav-link" to={`/form/${formId}`}>
-              <i className="fa fa-pencil"></i> 提交表单
+              <i className="fa fa-pencil"></i> 提交
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to={`/form/${formId}/submission`}>
-              <i className="fa fa-list-alt"></i> 查看已提交表单
+              <i className="fa fa-list-alt"></i> 查看
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to={`/form/${formId}/edit`}>
-              <i className="fa fa-edit"></i> 编辑表单
+              <i className="fa fa-edit"></i> 编辑
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to={`/form/${formId}/delete`}>
-              <i className="fa fa-trash"></i> 删除表单
+              <i className="fa fa-trash"></i> 删除
             </Link>
           </li>
         </ul>
