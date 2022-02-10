@@ -24,7 +24,7 @@
     "font-awesome": "^4.7.0",
     "formiojs": "^4.0.0-rc.18",
     "gulp": "^4.0.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "16.8.2",
     "react-dom": "16.8.2",
     "react-formio": "git+ssh://git@github.com/opensourceclub/react-formio.git#chinese-translation-releases",
